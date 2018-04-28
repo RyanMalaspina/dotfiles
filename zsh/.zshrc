@@ -64,7 +64,7 @@ unsetopt ALL_EXPORT
 
 ### Bind keys
 #############
-autoload -U compinit
+autoload -Uz compinit
 compinit
 bindkey "^?" backward-delete-char
 bindkey '^[OH' beginning-of-line
@@ -161,8 +161,13 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 ###########
 alias ll='ls -al'
 alias ls='ls --color=auto '
+alias grep='grep --color=auto'
 alias netcheck='ping archwiki.org -c 3'
-alias syu='sudo pacman -Syu && sudo aura -Axyu'
+alias syu='sudo pacman -Syu'
+alias ayu='sudo aura -Axyu'
+alias startlamp='sudo systemctl start httpd.service mariadb.service'
+alias clip='xclip -o | xclip -selection clipboard -i'
+alias spotify='spotify --force-device-scale-factor=2'
 
 ### Exports
 ###########
@@ -171,6 +176,7 @@ export EDITOR="/usr/bin/vim"
 ### PATH Additions
 ##################
 PATH="$HOME/.yarn/bin:$PATH"
+PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # Eye candy
 archey3

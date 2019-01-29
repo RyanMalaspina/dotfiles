@@ -20,4 +20,3 @@ set hlsearch
 
 " Syntax Highlighting
 syntax enable
-

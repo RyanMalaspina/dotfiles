@@ -38,8 +38,8 @@ zle -N history-beginning-search-forward-end history-search-end
 #################
 PATH="/usr/local/bin:/usr/local/sbin/:$PATH"
 HISTFILE=$HOME/.zhistory
-HISTSIZE=100
-SAVEHIST=100
+HISTSIZE=1000
+SAVEHIST=1000
 HOSTNAME="`hostname`"
 LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
 
@@ -156,6 +156,8 @@ zstyle '*' single-ignored show
 ### Source plugins
 ##################
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/nvm/init-nvm.sh
 
 ### Aliases
 ###########
@@ -168,6 +170,8 @@ alias ayu='sudo aura -Axyu'
 alias startlamp='sudo systemctl start httpd.service mariadb.service'
 alias clip='xclip -o | xclip -selection clipboard -i'
 alias spotify='spotify --force-device-scale-factor=2'
+alias gradlew='./gradlew'
+alias artisan='php artisan'
 
 ### Exports
 ###########
@@ -175,9 +179,11 @@ export EDITOR="/usr/bin/vim"
 
 ### PATH Additions
 ##################
-PATH="$HOME/.yarn/bin:$PATH"
-PATH="$HOME/.config/composer/vendor/bin:$PATH"
+PATH="$PATH:$HOME/.node-global/bin"
+PATH="$PATH:$HOME/.npm-global/bin"
+PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:$HOME/.config/composer/vendor/bin"
+PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 
 # Eye candy
 archey3
-
